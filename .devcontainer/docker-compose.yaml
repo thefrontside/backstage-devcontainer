@@ -1,0 +1,20 @@
+version: '3.8'
+
+volumes:
+  root-node_modules: {}
+  frontend-node_modules: {}
+  backend-node_modules: {}
+
+services:
+  app:
+    image: mcr.microsoft.com/vscode/devcontainers/typescript-node:14
+    volumes:
+      - .:/workspace:cached
+      - root-node_modules:/workspace/node_modules
+      - frontend-node_modules:/workspace/packages/app/node_modules
+      - backend-node_modules:/workspace/packages/backend/node_modules
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      - POSTGRES_HOST=my_postgres_db
+      - POSTGRES_USER=postgres_username
+      - POSTGRES_PASSWORD=postgres_password

@@ -1,0 +1,9 @@
+{
+	"name": "Backstage & Devcontainer",
+	"dockerComposeFile": [
+    "../docker-compose.yaml",
+    "docker-compose.yaml"
+  ],
+	"service": "app",
+	"workspaceFolder": "/workspace"
+}

@@ -1,0 +1,14 @@
+version: "3.8"
+
+volumes:
+  data: {}
+
+services:
+  my_postgres_db:
+    image: postgres
+    restart: always
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres_username
+      POSTGRES_PASSWORD: postgres_password
